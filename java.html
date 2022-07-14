@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>JavaScript Demo</title>
+        <script lang="javascript">
+            function showname() {
+                var n = document.getElementById('name')
+                var m = document.getElementById('message')
+                var x = document.getElementById('name2')
+                console.log('Deu bao')
+                if (n.value.length > 0 && x.value.length > 0)
+                m.innerHTML='E ae, ' + n.value + ' ' + x.value
+            }
+        </script>
+    </head>
+    <body style="text-align: center;">
+        <div >
+            <p>What is your name? <input id='name' type='text'></p>
+            <p>What is your last name? <input id="name2" type="text"></p>
+            <p id="message"></p>
+        </div>
+        <div>
+            <button onclick="showname()">Submit</button>
+        </div>
+    </body>
+</html>
