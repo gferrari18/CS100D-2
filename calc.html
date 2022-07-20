@@ -12,6 +12,15 @@
     var leftval
     var op = ""
 
+	function factorialize(num) {
+  		if (num === 0 || num === 1)
+    		return 1;
+  		for (var i = num - 1; i >= 1; i--) {
+    		num *= i;
+  		}
+  		return num;
+	}
+
     function clicknumber(btn) {
         var num = btn.innerHTML
         var disp = document.getElementById('display')
@@ -29,8 +38,16 @@
         op = btn.innerHTML
         var disp = document.getElementById("display")
         leftval = parseInt(disp.innerHTML)
-        disp.innerHTML = "0"
+		disp.innerHTML = "0"
     }
+
+	function clickexc() {
+		var disp = document.getElementById('display')
+		var val = parseInt(disp.innerHTML)
+		var ans = factorialize(val)
+		disp.innerHTML = ans
+	}
+
     function clickeq() {
         var disp = document.getElementById('display')
         var rightval = parseInt(disp.innerHTML)
@@ -44,6 +61,8 @@
             disp.innerHTML = leftval / rightval
         if (op=="%")
             disp.innerHTML = leftval % rightval
+
+
 
         leftval=0
         op=""
@@ -75,7 +94,7 @@
 				<td><button class="number" onclick="clicknumber(this)">5</button></td>
 				<td><button class="number" onclick="clicknumber(this)">6</button></td>
 				<td><button class="op" onclick="clickop(this)">*</button></td>
-				<td><button class="op">?</button></td>
+				<td><button class="op" onclick="clickexc(this)">!</button></td>
 			</tr>
 			<tr>
 				<td><button class="number" onclick="clicknumber(this)">1</button></td>
@@ -89,7 +108,7 @@
 				<td><button class="op" onclick="erase()">CE</button></td>
 				<td><button class="op" onclick="clickeq()">=</button></td>
 				<td><button class="op" onclick="clickop(this)">+</button></td>
-				<td><button class="op"">?</button></td>
+				<td><button class="op">?</button></td>
 			</tr>
 		</table>
 	</div>
