@@ -61,6 +61,8 @@
             disp.innerHTML = leftval / rightval
         if (op=="%")
             disp.innerHTML = leftval % rightval
+		if (op=="^")
+			disp.innerHTML = leftval ** rightval
 
 
 
@@ -101,7 +103,7 @@
 				<td><button class="number" onclick="clicknumber(this)">2</button></td>
 				<td><button class="number" onclick="clicknumber(this)">3</button></td>
 				<td><button class="op" onclick="clickop(this)">-</button></td>
-				<td><button class="op">?</button></td>
+				<td><button class="op" onclick="clickop(this)">^</button></td>
 			</tr>
 			<tr>
 				<td><button class="number" onclick="clicknumber(this)">0</button></td>
