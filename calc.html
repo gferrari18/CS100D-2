@@ -63,6 +63,8 @@
             disp.innerHTML = leftval % rightval
 		if (op=="^")
 			disp.innerHTML = leftval ** rightval
+		if (op=="%%")
+			disp.innerHTML = leftval * (rightval/100)
 
 
 
@@ -110,7 +112,7 @@
 				<td><button class="op" onclick="erase()">CE</button></td>
 				<td><button class="op" onclick="clickeq()">=</button></td>
 				<td><button class="op" onclick="clickop(this)">+</button></td>
-				<td><button class="op">?</button></td>
+				<td><button class="op" onclick="clickop(this)">%%</button></td>
 			</tr>
 		</table>
 	</div>
